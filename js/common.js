@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var s = skrollr.init();
+    // var s = skrollr.init();
 
     $('.main-page .main-btn').mouseover(function () {
         $('.main-page .photo').hide();

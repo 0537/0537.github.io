@@ -21,7 +21,9 @@
       <!-- header-->
       <header class="main-header">
         <div class="wrapper"><a class="logo" href="0-master-page.html"></a>
-          <div class="call">заказать звонок</div>
+          <div class="call">
+            <div class="call-wrapper">заказать звонок</div>
+          </div>
           <div class="lang">eng</div>
           <div class="nav-head">Меню
             <div class="circle"></div>
@@ -76,66 +78,38 @@
                   ];
               
                   var map = new google.maps.Map(document.getElementById('map'), {
-                      center: {lat: 53.243, lng: 50.189},
+                      center: {lat: 53.320, lng: 50.223},
                       scrollwheel: false,
                       zoom: 8,
                       styles: styles,
                   });
               
-                  function addMarker(lat, lng, title, map) {
-                      var myLatlng = new google.maps.LatLng(lat, lng);
-                      return new google.maps.Marker({
+                  function googleMarker (lat, lng, objName, objAdress) {
+                      var contentString = '<div class="map-point-info" style="font-size: 14px; line-height: 1.5; font-weight: bold;">'+
+                          '<div class="map-header">'+ objName +'</div>'+
+                          '<div class="map-number">'+ objAdress +'</div>'
+                          '</div>';
+              
+                      var infowindow = new google.maps.InfoWindow({
+                          content: contentString
+                      });
+              
+                      var myLatlng = {lat, lng};
+              
+                      var marker = new google.maps.Marker({
                           position: myLatlng,
-                          title: title,
+                          title: 'title',
                           icon: '/img/marker.png',
                           map: map
                       });
-                  }
               
-                  addMarker(53.243, 50.189, '', map);
+                      marker.addListener('click', function() {
+                          infowindow.open(map, marker);
+                      });
+                  };
               
-                  //- var contentString = '<div id="content">'+
-                  //-     '<div id="siteNotice">'+
-                  //-     '</div>'+
-                  //-     '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-                  //-     '<div id="bodyContent">'+
-                  //-     '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-                  //-     'sandstone rock formation in the southern part of the '+
-                  //-     'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-                  //-     'south west of the nearest large town, Alice Springs; 450&#160;km '+
-                  //-     '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-                  //-     'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-                  //-     'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-                  //-     'Aboriginal people of the area. It has many springs, waterholes, '+
-                  //-     'rock caves and ancient paintings. Uluru is listed as a World '+
-                  //-     'Heritage Site.</p>'+
-                  //-     '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-                  //-     'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-                  //-     '(last visited June 22, 2009).</p>'+
-                  //-     '</div>'+
-                  //-     '</div>';
-                  //-
-                  //- var infowindow = new google.maps.InfoWindow({
-                  //-     content: contentString
-                  //- });
-                  //-
-                  //- marker.addListener('click', function() {
-                  //-     infowindow.open();
-                  //- });
+                  googleMarker(53.2432, 50.1897, 'Адрес офиса:', 'г. Самара, ул. 6 просека, д. 165, оф. 9.');
               }
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
               
             </script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvKp1fqkSHPRDy22OKZwFFq-WScYvIZrI&amp;callback=initMap" async defer></script>

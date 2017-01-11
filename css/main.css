@@ -211,8 +211,8 @@ a.main-link:hover {
 }
 
 .sub-nav .item:hover .icon-bg {
-  -webkit-transform: scale(4.3);
-  transform: scale(4.3);
+  -webkit-transform: scale(5.3);
+  transform: scale(5.3);
 }
 
 .sub-nav .item:hover .main-btn {
@@ -282,8 +282,8 @@ a.main-link:hover {
 }
 
 .sub-nav--about .item:hover .icon-bg {
-  -webkit-transform: scale(6.5);
-  transform: scale(6.5);
+  -webkit-transform: scale(7.5);
+  transform: scale(7.5);
 }
 
 .sub-nav--about .item .icon-bg {
@@ -383,7 +383,7 @@ a.main-link:hover {
   overflow: hidden;
 }
 
-.mx60, .page-header, .offer-commercial .wrapper, .faq-list, .service-info, .about-statistic .wrapper, .docs, .partners, .reviews .wrapper, .news, .news-page-content {
+.mx60, .page-header, .offer-commercial .wrapper, .faq-list, .service-info, .docs, .partners, .reviews .wrapper, .news, .news-page-content {
   width: 60%;
   margin: 0 auto;
 }
@@ -440,7 +440,6 @@ a.main-link:hover {
   align-items: center;
   width: 33.33333%;
   height: 300px;
-  background-color: #fff;
   color: #000;
   text-align: center;
   font-size: 18px;
@@ -504,7 +503,6 @@ a.main-link:hover {
   background: linear-gradient(135deg, #347fb9 0%, #347fb9 10%, #38aecc 90%, #38aecc 100%);
   padding: 100px 0;
   color: #fff;
-  overflow: hidden;
 }
 
 .offer-commercial .forms-wrapper {
@@ -619,7 +617,7 @@ a.main-link:hover {
 .offer-commercial .right-block .bg-image {
   position: absolute;
   left: 100px;
-  bottom: -200px;
+  bottom: -270px;
   z-index: 1;
 }
 
@@ -629,10 +627,12 @@ a.main-link:hover {
 }
 
 .about-and-case {
+  position: relative;
   height: 750px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  z-index: 10;
 }
 
 .about-and-case .strokes-wrapper {
@@ -885,6 +885,7 @@ input:-ms-input-placeholder {
 
 .faq-list {
   padding-top: 90px;
+  position: relative;
 }
 
 .faq-list .sub-header {
@@ -893,6 +894,28 @@ input:-ms-input-placeholder {
 
 .faq-list .strokes-wrapper {
   margin-bottom: 70px;
+}
+
+.faq-list .parallax-items {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.faq-list .parallax-items .circle {
+  position: absolute;
+  right: 20%;
+  top: 40%;
+}
+
+.faq-list .parallax-items .sqr {
+  position: absolute;
+  width: 160px;
+  height: 150px;
+  border: 36px solid #e6edf6;
+  bottom: 18%;
+  left: 27%;
 }
 
 .service-info {
@@ -927,12 +950,33 @@ input:-ms-input-placeholder {
 .service-info .white-header {
   position: absolute;
   bottom: -80px;
+  margin-left: 0;
+}
+
+.small-slider--service-page {
+  position: relative;
+  z-index: 10;
+}
+
+.faq-list--service-page .parallax-items .circle {
+  position: absolute;
+  right: 20%;
+  top: 53%;
+}
+
+.faq-list--service-page .parallax-items .sqr {
+  position: absolute;
+  width: 160px;
+  height: 150px;
+  border: 36px solid #e6edf6;
+  bottom: auto;
+  top: -8%;
+  left: 37%;
 }
 
 .about-statistic {
   position: relative;
-  background-image: url(../img/about-statistic.jpg);
-  background-size: cover;
+  background: linear-gradient(135deg, #347fb9 0%, #347fb9 10%, #38aecc 90%, #38aecc 100%);
 }
 
 .about-statistic:after {
@@ -942,11 +986,15 @@ input:-ms-input-placeholder {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(11, 77, 162, 0.8);
+  background-image: url(../img/about-statistic.png);
+  background-position: center 20%;
+  background-size: cover;
 }
 
 .about-statistic .wrapper {
   position: relative;
+  width: 1200px;
+  margin: 0 auto;
   padding: 50px 0;
   color: #fff;
   z-index: 10;
@@ -960,14 +1008,41 @@ input:-ms-input-placeholder {
   color: #e74c3c;
 }
 
+.about-statistic .wrapper .desc {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.about-statistic .wrapper .left-part {
+  margin-right: 20px;
+}
+
 .about-statistic .wrapper .desc-1 {
-  position: absolute;
-  top: 175px;
-  right: 20px;
   font-size: 16px;
   line-height: 28px;
   text-transform: none;
   width: 43%;
+}
+
+.small-slider--about {
+  position: relative;
+  z-index: 10;
+}
+
+.small-slider--about .item {
+  cursor: default;
+}
+
+.small-slider--about .item:before {
+  display: none;
+}
+
+.small-slider--about .slick-current .desc {
+  opacity: 1;
 }
 
 .vacancy-wrapper {
@@ -1533,7 +1608,7 @@ input:-ms-input-placeholder {
 .reviews .image-link {
   position: relative;
   width: 23%;
-  height: 300px;
+  height: 350px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2534,15 +2609,11 @@ input:-ms-input-placeholder {
   cursor: pointer;
 }
 
-.main-header .call:hover {
-  color: #000;
+.main-header .call .call-wrapper {
+  display: inline;
 }
 
-.main-header .call:hover:before {
-  background-color: #000;
-}
-
-.main-header .call:before {
+.main-header .call .call-wrapper:before {
   content: "";
   display: inline-block;
   width: 159px;
@@ -2550,6 +2621,14 @@ input:-ms-input-placeholder {
   position: absolute;
   bottom: -15px;
   background-color: #0865c3;
+}
+
+.main-header .call .call-wrapper:hover {
+  color: #000;
+}
+
+.main-header .call .call-wrapper:hover:before {
+  background-color: #000;
 }
 
 .main-header .lang {
@@ -3125,7 +3204,7 @@ footer .authors a:hover {
     height: 300px;
   }
   .about-statistic .wrapper {
-    font-size: 70px;
+    font-size: 68px;
   }
   .about-statistic .wrapper .desc-1 {
     font-size: 14px;
@@ -3171,9 +3250,8 @@ footer .authors a:hover {
   }
   .about-statistic .wrapper .desc-1 {
     position: static;
-    font-size: 18px;
     line-height: 1.7;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   footer .top {
     -webkit-flex-wrap: wrap;
@@ -3293,6 +3371,10 @@ footer .authors a:hover {
   .main-page-nav .item .desc {
     display: none;
   }
+  .main-page-nav .item .icon {
+    background-size: auto;
+    background-position: left center;
+  }
   .main-slider .top {
     display: none;
   }
@@ -3381,7 +3463,7 @@ footer .authors a:hover {
   .about-preview .desc-text .wrapper {
     width: 100%;
   }
-  .mx60, .page-header, .offer-commercial .wrapper, .faq-list, .service-info, .about-statistic .wrapper, .docs, .partners, .reviews .wrapper, .news, .news-page-content {
+  .mx60, .page-header, .offer-commercial .wrapper, .faq-list, .service-info, .docs, .partners, .reviews .wrapper, .news, .news-page-content {
     width: auto;
     padding-left: 30px;
     padding-right: 30px;
@@ -3395,7 +3477,7 @@ footer .authors a:hover {
     -webkit-flex: 0 0 100%;
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
-    min-height: auto;
+    min-height: 170px;
     padding: 30px 0;
     border-bottom: 1px solid #fff;
   }
@@ -3580,6 +3662,50 @@ footer .authors a:hover {
   .project-page-desc .brief .wrapper {
     width: 100%;
     padding: 30px;
+  }
+  .about-statistic .wrapper {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.7;
+    padding: 30px;
+    max-width: 100%;
+  }
+  .about-statistic .wrapper br {
+    display: none;
+  }
+  .about-statistic .wrapper .desc {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .about-statistic .wrapper .desc .red {
+    color: #fff;
+  }
+  .about-statistic .wrapper .desc:first-child {
+    display: block;
+  }
+  .about-statistic .wrapper .desc .left-part {
+    width: 100%;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+    margin-top: 10px;
+  }
+  .about-statistic .wrapper .desc-1 {
+    display: block;
+    width: auto;
+    font-size: 18px;
+    position: static;
+    line-height: 1.7;
+    margin-top: 10px;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    font-weight: 400;
+    height: auto;
   }
   .vacancy-wrapper {
     -webkit-flex-wrap: wrap;

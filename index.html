@@ -21,7 +21,9 @@
       <!-- header-->
       <header class="main-header">
         <div class="wrapper"><a class="logo" href="0-master-page.html"></a>
-          <div class="call">заказать звонок</div>
+          <div class="call">
+            <div class="call-wrapper">заказать звонок</div>
+          </div>
           <div class="lang">eng</div>
           <div class="nav-head">Меню
             <div class="circle"></div>
@@ -190,24 +192,43 @@
               ];
           
               var map = new google.maps.Map(document.getElementById('map'), {
-                  center: {lat: 53.243, lng: 50.189},
+                  center: {lat: 53.320, lng: 50.223},
                   scrollwheel: false,
                   zoom: 8,
                   styles: styles,
               });
           
-              function addMarker(lat, lng, title, map) {
-                  var myLatlng = new google.maps.LatLng(lat, lng);
-                  return new google.maps.Marker({
+              function googleMarker (lat, lng, objName, objAdress) {
+                  var contentString = '<div class="map-point-info" style="font-size: 14px; line-height: 1.5; font-weight: bold;">'+
+                      '<div class="map-header">'+ objName +'</div>'+
+                      '<div class="map-number">'+ objAdress +'</div>'
+                      '</div>';
+          
+                  var infowindow = new google.maps.InfoWindow({
+                      content: contentString
+                  });
+          
+                  var myLatlng = {lat, lng};
+          
+                  var marker = new google.maps.Marker({
                       position: myLatlng,
-                      title: title,
+                      title: 'title',
                       icon: '/img/marker.png',
                       map: map
                   });
-              }
           
-              addMarker(53.243, 50.189, '', map);
+                  marker.addListener('click', function() {
+                      infowindow.open(map, marker);
+                  });
+              };
+          
+              googleMarker(53.2432, 50.1897, 'Объект 1', 'Адресс объекта 1');
+              googleMarker(53.2291, 49.9047, 'Объект 2', 'Адресс объекта 2');
+              googleMarker(53.1416, 50.4998, 'Объект 3', 'Адресс объекта 3');
+              googleMarker(53.3330, 50.2615, 'Объект 4', 'Адресс объекта 4');
+              googleMarker(52.9275, 49.5351, 'Объект 5', 'Адресс объекта 5');
           }
+          
           
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvKp1fqkSHPRDy22OKZwFFq-WScYvIZrI&amp;callback=initMap" async defer></script>

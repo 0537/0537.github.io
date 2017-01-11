@@ -5,71 +5,6 @@
 
 
 $(document).ready(function() {
-
-    var windowHeight = $(window).height();
-    var pointStart = $('#footer').offset().top - windowHeight;
-    var pointEnd = $('#footer').offset().top + $('#footer').height();
-
-
-
-
-    $(window).scroll(function() {
-        if ($(window).scrollTop() >= pointStart && $(window).scrollTop() <= pointEnd) {
-
-            console.log('haha!');
-
-            var top = $(window).scrollTop();
-            $('.footer-parallax-elems .circle').css({
-                'transform': "translate(0%, " + top / 10 + "%"
-            });
-
-            // $('.footer-parallax-elems').find('.circle').(function() {
-            //     var element = $(this);
-            //     // var depth = parseInt(element.attr('data-depth'));
-            //     var top = $(window).scrollTop();
-            //     element.css({
-            //         'translateY': top + '%'
-
-            //     });
-            // });
-        } else {
-
-        }
-    });
-
-
-    // var topPos = $('.footer-parallax-elems .circle').offset().top;
-
-    // $(window).scroll(function() {
-    //     var st = $(this).scrollTop();
-    //
-    //     if(topPos <= st) {
-    //         alert('scuko!');
-    //         $('.footer-parallax-elems .circle').css({
-    //             'transform': "translate(0%, " + st / 20 + "%"
-    //         });
-    //     }
-    //
-    // });
-
-    // $('.footer-parallax-elems').find('.circle').each(function() {
-    //     var element = $(this);
-    //     // var left = parseInt(element.attr('data-left'));
-    //     var top = parseInt(element.attr('data-top'));
-    //     // var depth = parseInt(element.attr('data-depth'));
-    //     // var scale = parseFloat(element.attr('data-scale'));
-    //
-    //     // element.css({
-    //     //     // 'z-index': depth,
-    //     //     // 'left': left + '%',
-    //     //     // '-webkit-transform': 'scale(' + scale + ')',
-    //     //     // '-moz-transform': 'scale(' + scale + ')',
-    //     //     // '-ms-transform': 'scale(' + scale + ')',
-    //     //     // '-o-transform': 'scale(' + scale + ')',
-    //     //     // 'transform': 'scale(' + scale + ')'
-    //     // });
-    // });
-
     $(".partners .chessboard").on("click","a", function (event) {
        //отменяем стандартную обработку нажатия по ссылке
        event.preventDefault();
@@ -86,13 +21,13 @@ $(document).ready(function() {
     // Вадидация номера
 
     jQuery(function($) {
-      $('input[name="phone"]').mask('+9 (999) 999-99-99');
+        $('input[name="phone"]').mask('+7 (999) 999-99-99');
     });
 
 
     // ФОСЫ
 
-    $('.main-header .call').on('click', function () {
+    $('.main-header .call-wrapper').on('click', function () {
         $('.fos').css('display', 'flex');
     });
 
@@ -191,7 +126,21 @@ $(document).ready(function() {
 
     // МЕНЮ С ГАМБУРГЕРОМ
 
+    $('.nav-head').on('click', function () {
+        $('.main-nav').css('transform', 'translateX(0)');
+        // $('.giant-wrapper')
+        //     .addClass('content-fix')
+        //     .addClass('content-scroll-show');
+        // $('.main-nav').addClass('content-scroll-show');
+    });
 
+    $('.main-nav .close-btn').on('click', function () {
+        $('.main-nav').css('transform', 'translateX(320px)');
+        // $('.giant-wrapper')
+        //     .removeClass('content-fix')
+        //     .removeClass('content-scroll-show');
+        // $('.main-nav').removeClass('content-scroll-show');
+    });
 
     $(document).mouseup(function(e) {
         var container = $('.main-nav');
@@ -368,20 +317,6 @@ $(document).ready(function() {
     });
 
 
-    $('.nav-head').on('click', function () {
-        $('.main-nav').css('transform', 'translateX(0)');
-        // $('.giant-wrapper')
-        //     .addClass('content-fix')
-        //     .addClass('content-scroll-show');
-        // $('.main-nav').addClass('content-scroll-show');
-    });
 
-    $('.main-nav .close-btn').on('click', function () {
-        $('.main-nav').css('transform', 'translateX(320px)');
-        // $('.giant-wrapper')
-        //     .removeClass('content-fix')
-        //     .removeClass('content-scroll-show');
-        // $('.main-nav').removeClass('content-scroll-show');
-    });
 
 });

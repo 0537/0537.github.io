@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+    <title>Главная</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/main.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <header class="b-header b-header-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-3">
+                    <a href="/">
+                        <img src="img/logo-big.svg" class="img-responsive" alt="Image">
+                    </a>
+                </div>
+                <div class="col-xs-8 col-sm-10 col-md-10 col-lg-9 text-right">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <i class="i-menu"></i>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav nav-menu">
+                            <li><a href="#">Как это работает</a></li>
+                            <li><a href="#">Стать партнером</a></li>
+                            <li><a href="#modal-contact" data-toggle="modal">Связаться с нами</a></li>
+                            <li><a href="#" class="i-user">Войти</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="b-header__title">адвист - поиск юристов для судебных споров</div>
+            <div class="b-header__txt">Время отстоять свои интересы!</div>
+            <div class="law text-center">
+                <div class="form-inline">
+                    <div class="form-group law-dropdown">
+                        <!-- <select class="selectpicker show-menu-arrow" title='Город' data-width="130" data-style="form-control">
+                            <option>Казань</option>
+                            <option>Москва</option>
+                            <option>Самара</option>
+                        </select> -->
+                        <button type="button" class="dropdown-toggle form-control btn-town" data-toggle="modal" data-target='#modal-town'>Город <b class="caret"></b></button>
+                        <!-- <div class="dropdown js-dropdown">
+                            <div class="dropdown-toggle form-control" data-toggle="dropdown">Город <b class="caret"></b></div>
+                            <div class="dropdown-menu law-town">
+
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="form-group form-group-i i-map">
+                        <input type="text" class="form-control" placeholder="Введите адрес - найдем ближайших">
+                    </div>
+                    <div class="form-group law-dropdown">
+                        <div class="dropdown open js-dropdown">
+                            <!-- <div class="dropdown-toggle form-control">Выбрать проблему <b class="caret"></b></div> -->
+                            <div class="form-control form-problem">Выбрать проблему <!-- <b class="caret"></b> --> </div>
+                            <div class="dropdown-menu">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <div class="law-title i-job">Трудовое право</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Оспорить увольнение</a></li>
+                                            <li><a href="#">Споры по сумме заработной платы</a></li>
+                                            <li><a href="#">Задержка заработной платы</a></li>
+                                            <li><a href="#">Невыплата декретных</a></li>
+                                            <li><a href="#">Травма на производстве</a></li>
+                                        </ul>
+                                        <div class="law-title i-family">Семейное право</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Лишение родительских прав</a></li>
+                                            <li><a href="#">Восстановление родительских прав</a></li>
+                                            <li><a href="#">Установление отцовства</a></li>
+                                            <li><a href="#">Осправивание отцовства</a></li>
+                                            <li><a href="#">Развод</a></li>
+                                            <li><a href="#">Взыскание алиментов</a></li>
+                                            <li><a href="#">Оспаривание алиментов</a></li>
+                                        </ul>
+                                        <div class="law-title i-legacy">Наследственное право</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Оспорить завещание</a></li>
+                                            <li><a href="#">Раздел наследства</a></li>
+                                        </ul>
+                                        <div class="law-title i-civil">Гражданское право</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Банкротство физических лиц</a></li>
+                                            <li><a href="#">Надзорная жалоба</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <div class="law-title i-credit">Кредиты и займы</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Споры с банком по неуплате кредита</a></li>
+                                            <li><a href="#">Мошенничество при кредитовании</a></li>
+                                            <li><a href="#">Мошенничество с банковской картой</a></li>
+                                            <li><a href="#">Угрозы коллекторов</a></li>
+                                            <li class="disabled"><a href="#">Оспорить арест имущества</a></li>
+                                            <li class="disabled"><a href="#">Взыскание долга по расписке</a></li>
+                                            <li><a href="#">Оспорить взыскание задолженности по кредиту</a></li>
+                                        </ul>
+                                        <div class="law-title i-auto">Автомобильное право</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Оспорить лишение прав</a></li>
+                                            <li><a href="#">Обжаловать поставновление ГИБДД</a></li>
+                                            <li><a href="#">Взыскание ущерба при ДТП</a></li>
+                                        </ul>
+                                        <div class="law-title i-insurance">Страховое право</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Споры по выплате со страховкой</a></li>
+                                            <li><a href="#">Взыскание неустойки по</a></li>
+                                            <li><a href="#">страховому случаю</a></li>
+                                        </ul>
+                                        <div class="law-title i-consumer">Защита прав потребителей</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Возврат товара</a></li>
+                                            <li><a href="#">Возврат денег за некачественные услуги</a></li>
+                                            <li><a href="#">Споры по гарантийным обязательствам</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <div class="law-title i-medicine">Медицинское право</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Врачебная ошибка</a></li>
+                                            <li class="disabled"><a href="#">Врачебная халатность</a></li>
+                                            <li class="disabled"><a href="#">Нарушение прав пациента</a></li>
+                                        </ul>
+                                        <div class="law-title i-house">Жилищное право</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Оспорить долю в квартире</a></li>
+                                            <li><a href="#">Аварийное жилье</a></li>
+                                            <li><a href="#">Оспорить выселение из квартиры</a></li>
+                                            <li><a href="#">Жилищное условие</a></li>
+                                            <li><a href="#">Мошенничество с недвижимостью</a></li>
+                                            <li><a href="#">Земельные споры</a></li>
+                                            <li><a href="#">Оспорить незаконное строительство</a></li>
+                                            <li><a href="#">Споры с застройщиком</a></li>
+                                            <li><a href="#">Взыскание неустойки с застройшика</a></li>
+                                        </ul>
+                                        <div class="law-title i-gkh">ЖКХ</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Затопили соседей Вы</a></li>
+                                            <li><a href="#">Затопили соседи Вас</a></li>
+                                            <li><a href="#">Споры с коммунальщиками</a></li>
+                                        </ul>
+                                        <div class="law-title i-criminal">Уголовное право</div>
+                                        <ul class="nav">
+                                            <li><a href="#">Грабеж</a></li>
+                                            <li><a href="#">Кража</a></li>
+                                            <li><a href="#">Тяжкие телесные повреждения</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <form class="form-inline">
+                <div class="form-group">
+                    <select class="selectpicker show-menu-arrow" title='Город' data-width="100%" data-style="form-control">
+                        <option>Казань</option>
+                        <option>Москва</option>
+                        <option>Самара</option>
+                    </select>
+                </div>
+                <div class="form-group form-group-i i-map">
+                    <input type="text" class="form-control" placeholder="Введите адрес - найдем ближайших">
+                </div>
+                <div class="form-group">
+
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></div>
+                    <div class="dropdown-menu">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="law-title">Трудовое право</div>
+                                    <ul class="nav">
+                                        <li><a href="#">Оспорить увольнение</a></li>
+                                        <li><a href="#">Споры по сумме заработной платы</a></li>
+                                        <li><a href="#">Задержка заработной платы</a></li>
+                                        <li><a href="#">Невыплата декретных</a></li>
+                                        <li><a href="#">Травма на производстве</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form> -->
+        </div>
+    </header>
+
+    <div class="b-vantage">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="media vantage">
+                        <div class="pull-left">
+                            <i class="sprite sprite-vantage1"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Экономьте время</h4>
+                            <p>все профессионалы <br> на одной площадке </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="media vantage">
+                        <div class="pull-left">
+                            <i class="sprite sprite-vantage2"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">выбирайте </h4>
+                            <p>по стажу, цене <br> или рейтингу </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix visible-xs"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="media vantage">
+                        <div class="pull-left">
+                            <i class="sprite sprite-vantage3"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Сравнивайте </h4>
+                            <p>и выбирайте <br> лучших </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="media vantage">
+                        <div class="pull-left">
+                            <i class="sprite sprite-vantage4"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">без оплаты на сайте </h4>
+                            <p>оплата вашему юристу при <br> заключении договора</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix visible-xs"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="media vantage">
+                        <div class="pull-left">
+                            <i class="sprite sprite-vantage5"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">получайте уведомления </h4>
+                            <p>о ходе дела по смс, эл. почте <br> или на сайте</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="media vantage">
+                        <div class="pull-left">
+                            <i class="sprite sprite-vantage6"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">ваш юрист подготовит </h4>
+                            <p>необходимые документы для <br> судебного процесса</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="b-work bg-white br-cleaner">
+        <div class="container">
+            <h3 class="text-center text-uppercase">как это работает? все просто!</h3>
+            <br><br><br>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <div class="media work">
+                        <div class="pull-left">
+                            <i class="i-man-lamp"></i>
+                        </div>
+                        <div class="media-body">
+                            Обозначьте <br> вашу <br> проблему
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <div class="media work">
+                        <div class="pull-left">
+                            <i class="i-man-pedestal"></i>
+                        </div>
+                        <div class="media-body">
+                            Подберите <br> лучшего <br> юриста
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <div class="media work">
+                        <div class="pull-left">
+                            <i class="i-man-lawyer"></i>
+                        </div>
+                        <div class="media-body">
+                            Оплатите <br> непосредственно <br> юристу
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <div class="media work">
+                        <div class="pull-left">
+                            <i class="i-man-smart"></i>
+                        </div>
+                        <div class="media-body">
+                            Контролируйте ход дела по смс, e-mail, <br> личному кабинету
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="b-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-sm-6 col-md-3 col-lg-3">
+                    <ul class="nav">
+                        <li><a href="#">Как это работает?</a></li>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-4 col-sm-6 col-md-2 col-lg-3">
+                    <a href="tel:88465550000" class="contact">
+                        <i class="i-phone-black"></i>
+                        (846) 555-00-00
+                    </a>
+                    <a href="mailto:example@mail.ru" class="contact">
+                        <i class="i-email-black"></i>
+                        example@mail.ru
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-6 col-md-2 col-lg-2">
+                    <a href="/">
+                        <img src="img/logo_min.png" class="img-responsive" alt="Image">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                    <div class="subscribe">
+                        <div class="subscribe__txt">Расскажем как выбрать юриста:</div>
+                        <div class="form-inline">
+                            <input type="text" class="form-control">
+                            <button type="button" class="btn btn-primary">Подписаться</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <div class="container">
+                <div class="pull-left">
+                    © 2016 Все права на сайт "Адвист" принадлежат ООО "Агре" г. Самара <br>
+                    ИНН: 6319206494 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ОГРН: 1166313086202
+                </div>
+                <div class="pull-right">
+                    18+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="modal fade" id="modal-town">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header visible-xs">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="i-cancel text-success"></i></button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <div class="form-horizontal">
+                                <label class="col-xs-4 control-label txt-nowrap">Ваш город</label>
+                                <div class="col-xs-8">
+                                    <button type="button" class="btn btn-default btn-data1">Самара</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-i i-map map-in-popup">
+                            <input type="text" class="form-control city-in-popup" placeholder="Найдите свой город">
+                        </div>
+                        <!-- <div class="form-group form-btn-width-xs">
+                            <button type="button" class="btn btn-primary btn-data">Алфавит</button>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="modal-body law law-town">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                            <div class="law-title">А</div>
+                            <ul class="nav">
+                                <li><a href="#">Астрахань</a></li>
+                            </ul>
+                            <div class="law-title">Б</div>
+                            <ul class="nav">
+                                <li><a href="#">Барнаул</a></li>
+                                <li><a href="#">Балашиха</a></li>
+                                <li><a href="#">Брянск</a></li>
+                            </ul>
+                            <div class="law-title">В</div>
+                            <ul class="nav">
+                                <li><a href="#">Воронеж</a></li>
+                                <li><a href="#">Волгоград</a></li>
+                                <li><a href="#">Владивосток</a></li>
+                            </ul>
+                            <div class="law-title">Е</div>
+                            <ul class="nav">
+                                <li><a href="#">Екатеринбург</a></li>
+                            </ul>
+                            <div class="law-title">И</div>
+                            <ul class="nav">
+                                <li><a href="#">Ижевск </a></li>
+                                <li><a href="#">Иркутск</a></li>
+                                <li><a href="#">Иваново</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                            <div class="law-title">К</div>
+                            <ul class="nav">
+                                <li><a href="#">Кемерово</a></li>
+                                <li><a href="#">Киров</a></li>
+                                <li><a href="#">Калиниград</a></li>
+                                <li><a href="#">Курск</a></li>
+                            </ul>
+                            <div class="law-title">Л</div>
+                            <ul class="nav">
+                                <li><a href="#">Липецк</a></li>
+                            </ul>
+                            <div class="law-title">М</div>
+                            <ul class="nav">
+                                <li><a href="#">Москва  </a></li>
+                                <li><a href="#">Махачкала</a></li>
+                                <li><a href="#">Магнитогорск</a></li>
+                            </ul>
+                            <div class="law-title">Н</div>
+                            <ul class="nav">
+                                <li><a href="#">Новосибирск    </a></li>
+                                <li><a href="#">Нижний Новгород</a></li>
+                                <li><a href="#">Новокузнецк</a></li>
+                                <li><a href="#">Набережные Челны</a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix visible-xs"></div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                            <div class="law-title">О</div>
+                            <ul class="nav">
+                                <li><a href="#">Омск </a></li>
+                                <li><a href="#">Оренбург</a></li>
+                            </ul>
+                            <div class="law-title">П</div>
+                            <ul class="nav">
+                                <li><a href="#">Пермь </a></li>
+                                <li><a href="#">Пенза</a></li>
+                            </ul>
+                            <div class="law-title">Р</div>
+                            <ul class="nav">
+                                <li><a href="#">Ростов-на-Дону </a></li>
+                                <li><a href="#">Рязань</a></li>
+                            </ul>
+                            <div class="law-title">С</div>
+                            <ul class="nav">
+                                <li><a href="#">Санкт-Петербург     </a></li>
+                                <li><a href="#">Самара</a></li>
+                                <li><a href="#">Саратов</a></li>
+                                <li><a href="#">Ставрополь</a></li>
+                                <li><a href="#">Севастополь</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                            <div class="law-title">Т</div>
+                            <ul class="nav">
+                                <li><a href="#">Тюмень    </a></li>
+                                <li><a href="#">Тольятти</a></li>
+                                <li><a href="#">Томск</a></li>
+                                <li><a href="#">Тула</a></li>
+                                <li><a href="#">Тверь</a></li>
+                            </ul>
+                            <div class="law-title">У</div>
+                            <ul class="nav">
+                                <li><a href="#">Уфа  </a></li>
+                                <li><a href="#">Ульяновск</a></li>
+                                <li><a href="#">Улан-Удэ</a></li>
+                            </ul>
+                            <div class="law-title">Х</div>
+                            <ul class="nav">
+                                <li><a href="#">Хабаровск</a></li>
+                            </ul>
+                            <div class="law-title">Ч</div>
+                            <ul class="nav">
+                                <li><a href="#">Челябинск  </a></li>
+                                <li><a href="#">Чебоксары</a></li>
+                            </ul>
+                            <div class="law-title">Я</div>
+                            <ul class="nav">
+                                <li><a href="#">Ярославль</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modal-contact">
+        <div class="modal-dialog modal-md1">
+            <div class="modal-header visible-xs">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="i-cancel text-success"></i></button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row data-txt-mb1">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-primary btn-data btn-block">Клиент</button>
+                            <div class="data-txt-mb visible-xs"></div>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-default btn-data1 btn-block">Партнер</button>
+                        </div>
+                    </div>
+                    <div class="form-group data-txt-mb1">
+                        <input type="text" class="form-control" placeholder="Как к Вам обращаться?">
+                    </div>
+                    <div class="form-group data-txt-mb1">
+                        <input type="text" class="form-control" placeholder="Электронная почта">
+                    </div>
+                    <div class="form-group data-txt-mb1">
+                        <textarea class="form-control" rows="5" placeholder="Ваше обращение"></textarea>
+                    </div>
+                    <div class="row data-txt-mb1">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-default btn-data1 btn-block">Отменить</button>
+                            <div class="data-txt-mb visible-xs"></div>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-primary btn-data btn-block">Отправить</button>
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">
+                            <span class="checkbox-custom"></span>
+                            <div class="checkbox-txt">
+                                Я даю свое согласие на обработку персональных данных и соглашаюсь с условиями и <a href="#">политикой конфиденциальности</a>, а также <a href="#">пользовательским соглашением</a>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">
+                            <span class="checkbox-custom"></span>
+                            <div class="checkbox-txt">
+                                Я хочу получать информационные сообщения по e-mail и SMS
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/libs.min.js"></script>
+
+    <script src="js/common.js"></script>
+
+</body>
+</html>

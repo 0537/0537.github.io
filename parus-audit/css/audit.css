@@ -257,6 +257,19 @@ h1, h2 {
   left: -100px;
 }
 
+.audit-start .right-block .deduction {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+}
+
+.audit-start .right-block .smoke-wrapper {
+  position: absolute;
+  top: 120px;
+  left: 60%;
+  z-index: 10;
+}
+
 .audit-targets {
   position: relative;
   height: 1000px;
@@ -525,18 +538,16 @@ h1, h2 {
   background-image: linear-gradient(0deg, #ffe98a 10%, #d74177 90%);
 }
 
-.audit-marketing img {
+.audit-marketing .buddah-wrapper {
   position: absolute;
+  right: 30px;
+  bottom: 150px;
 }
 
 .audit-marketing .buddah {
+  position: absolute;
   bottom: 0;
   right: 0;
-}
-
-.audit-marketing .buddah-text {
-  right: 30px;
-  bottom: 150px;
 }
 
 .audit-marketing .right-block {
@@ -554,6 +565,7 @@ h1, h2 {
 
 .audit-usability {
   background-image: linear-gradient(0deg, #686a66 0%, #48464c 100%);
+  overflow: hidden;
 }
 
 .audit-usability .left-block {
@@ -594,6 +606,23 @@ h1, h2 {
   left: -260px;
   bottom: -90px;
   z-index: 10;
+}
+
+.audit-strategy .the-jukov:hover ~ .blick {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.audit-strategy .blick {
+  position: absolute;
+  z-index: 10;
+  right: 225px;
+  bottom: 132px;
+  transition: .25s;
+  -webkit-transform: scale(0.1);
+  transform: scale(0.1);
+  opacity: 0;
 }
 
 .audit-strategy .right-block {

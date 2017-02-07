@@ -5,7 +5,8 @@ $(document).ready(function() {
       var s = skrollr.init();
     }
 
-    // var $juiceParallax = $('.juice-parallax').parallax();
+    var $smokeParallax = $('.smoke-parallax').parallax();
+    var $buddahParallax = $('.buddah-parallax').parallax();
     // var $zombieParallax = $('.zombie-parallax').parallax();
     // var $promotionParallax = $('.promotion-parallax').parallax();
 

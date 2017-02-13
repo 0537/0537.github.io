@@ -1,0 +1,132 @@
+.top-block--magazines {
+  background: linear-gradient(260deg, #f76767, #6771f7, #f76767, #6771f7);
+  background-size: 300% 300%;
+  animation: topBlock 10s ease infinite;
+
+  button { margin-top: 40px; }
+  button.prev { left: 26px; bottom: 173px; }
+  button.next { right: -5px; bottom: 173px; }
+}
+
+.slider {
+  position: relative;
+  height: 700px;
+}
+
+.slider-back {
+  position: absolute;
+  bottom: 0;
+  -webkit-select-user: none;
+  z-index: 50;
+}
+
+#magazines-slider-1,
+#magazines-slider-2,
+#magazines-slider-3 {
+  position: absolute;
+  left: 38px;
+  width: 310px;
+  height: 700px;
+}
+
+#magazines-slider-2 {
+  left: 244px;
+  z-index: 20;
+}
+
+#magazines-slider-3 {
+  left: 467px;
+  z-index: 30;
+}
+
+.magazines-slider-shot {
+  position: relative;
+  height: 700px;
+  bottom: -74px;
+  z-index: 1010;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.img-cont {
+  display: flex;
+  align-items: center;
+  height: 160px;
+}
+
+.try {
+  height: 330px;
+  margin-top: 50px;
+  color: white;
+  background: linear-gradient(260deg, #f76767, #6771f7, #f76767, #6771f7);
+  background-size: 300% 300%;
+  animation: topBlock 10s ease infinite;
+}
+
+.try h3 {
+  padding-bottom: 40px;
+}
+
+.try-text-cont {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.try-number {
+  font-size: 55px;
+  font-weight: normal;
+  margin-top: -15px;
+  margin-right: 15px;
+}
+
+.try-text {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.try-input {
+  font-size: 16px;
+  font-weight: normal;
+  color: #999;
+  border: none;
+  border-radius: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 150%;
+  height: 60px;
+}
+
+.input-cont {
+  overflow: hidden;
+  line-height: 60px;
+}
+
+.third-container {
+  height: 60px;
+  display: flex;
+  align-content: center;
+  margin-top: 30px;
+}
+
+.third-container img {
+  margin-right: 15px;
+}
+
+.third-container div {
+  padding-top: 16px;
+  padding-right: 20px;
+}
+
+.third-container div:last-child { padding-right: 0px; }
+
+.third-container button.big-button {
+  padding: 0;
+  background: none;
+  border: 2px solid #fff;
+  width: 110%;
+}

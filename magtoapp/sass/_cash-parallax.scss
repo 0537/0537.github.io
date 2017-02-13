@@ -1,0 +1,73 @@
+.cash-wrapper--blogapp {
+    background-image: url(../img/wp-blogapp.jpg);
+}
+
+.cash-wrapper--hotnews {
+    background-image: url(../img/wp-hotnews.jpg);
+}
+
+.cash-wrapper--carousel {
+    background-image: url(../img/wp-carousel.jpg);
+}
+
+.cash-wrapper--magazines {
+    background-image: url(../img/wp-magazines.jpg);
+}
+
+.cash-wrapper {
+    background-attachment: fixed;
+    background-position: 50% 0;
+    background-repeat: repeat-y;
+    background-size: contain;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h4 {
+        padding: 40px 0 0;
+    }
+
+    h4 + span {
+        font-size: 16px;
+        color: #ff8e67;
+        padding-top: 10px;
+        padding-bottom: 30px;
+        cursor: pointer;
+
+        a {
+            text-transform: uppercase;
+        }
+
+        &::after,
+        &::before {
+            display: block;
+            position: absolute;
+            width: 4%;
+            bottom: 0;
+            content: '';
+            border-bottom: 4px solid #ff8e67;
+            transition: 0.3s ease-out;
+        }
+
+        &::before {
+            left: calc(46% + 1px);
+        }
+
+        &::after {
+            right: calc(46% + 1px);
+        }
+    }
+}
+
+.cash-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 150px;
+    background: white;
+}

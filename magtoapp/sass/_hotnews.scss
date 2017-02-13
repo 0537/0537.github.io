@@ -1,0 +1,140 @@
+.top-block--hotnews {
+  background: linear-gradient(260deg, #ff8e66, #e5683c, #ff8e66);
+  background-size: 300% 300%;
+  animation: topBlock 10s ease infinite;
+}
+
+.fire-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  height: auto;
+  opacity: 0.5;
+}
+
+.hotphone-wrapper { position: relative; }
+
+.hotphone-wrapper .top-block-text {
+  position: relative;
+  left: 90px;
+
+  h3 { display: block; width: 350px; }
+
+  p {
+    display: block;
+    width: 350px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 24px;
+  }
+
+  button { margin-top: 40px; }
+}
+
+.hotphone-wrapper .top-block-text h3::after {
+  position: absolute;
+  top: 205px;
+  left: 222px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "1";
+  font-size: 24px;
+  width: 38px;
+  height: 38px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #ff2a2a;
+}
+
+.hotphone {
+  position: absolute;
+  bottom: 0;
+  left: -50px;
+}
+
+.izd {
+  height: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.izd p {
+  display: block;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.idz p:last-child {
+  font-weight: normal;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 570px;
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+.presentation h4 {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.presentation h4 + span {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.presentation-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f4f4f4;
+  width: 100%;
+  height: 100%;
+  z-index: -30;
+}
+
+.present-img {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  bottom: -800px;
+}
+
+.hot-color {
+  color: #ff8e66;
+}
+
+.hot {
+  background: rgba(255,255,255,.3);
+  color: #ff8e66;
+  border: 2px solid;
+  border-color: #ff8e66;
+  font-weight: normal;
+  z-index: 100;
+}
+
+.hot:hover {
+  color: #fff;
+  background: #ff8e66;
+}

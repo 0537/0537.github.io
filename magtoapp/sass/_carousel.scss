@@ -1,0 +1,49 @@
+.top-block--carousel {
+    background: linear-gradient(-68deg, #31d5fe, #006cea, #31d5fe, #006cea);
+    background-size: 300% 300%;
+    animation: topBlock 10s ease infinite;
+
+    img {
+        position: absolute;
+        bottom: 0;
+        right: 40%;
+        z-index: 1;
+    }
+    .top-block-text {
+        p + p {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 30px;
+        }
+        z-index: 2;
+    }
+    .slider {
+        position: relative;
+        z-index: 0;
+    }
+}
+
+#carousel-slider {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    padding-left: 3.9%;
+    padding-right: 28.3%;
+    background: url(../img/carousel/iphone.png) no-repeat;
+    background-size: 75%;
+    background-position: 0% -10%;
+}
+
+.carousel-slider-shot {
+    position: relative;
+    height: 700px;
+    top: 79px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        left: 0;
+    }
+}

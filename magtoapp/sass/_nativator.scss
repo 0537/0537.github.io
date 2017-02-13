@@ -1,0 +1,139 @@
+.top-block--nativator {
+    background: linear-gradient(270deg, #e93c1e, #ffc30b, #e93c1e);
+    background-size: 400% 400%;
+    animation: topBlock 10s ease infinite;
+    overflow: hidden;
+
+    button {
+        width: 250px;
+        margin-top: 50px;
+    }
+
+    button.prev {
+        left: -30px;
+    }
+
+    button.next {
+        right: -10px;
+    }
+
+    h3 + p {
+        margin-top: 30px;
+    }
+}
+
+.b-block--nativator {
+    margin-bottom: 30px;
+}
+
+.b-block--nativator-red {
+    height: 440px;
+    justify-content: flex-start;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.b-block--nativator-red .img-wrapper {
+    margin-top: 50px;
+    height: 150px;
+    justify-content: flex-start;
+    z-index: 100;
+}
+
+.b-block--nativator-red p {
+    position: relative;
+    font-size: 18px;
+    text-transform: none;
+}
+
+.b-block--nativator-red h5 {
+    position: relative;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.genius-item:first-child .hover-img {
+    width: 84%;
+    right: 0;
+}
+
+.genius-item:last-child .hover-img {
+    bottom: -46px;
+}
+
+.nat-1st-pack .col-sm-6:last-child .b-block--nativator,
+.nat-1st-pack .col-sm-6:nth-child(5) .b-block--nativator {
+    margin-bottom: 0;
+}
+
+h4.happy {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.a-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 40;
+    margin-bottom: 40px;
+}
+
+.nat-2nd-pack .b-block {
+    justify-content: flex-start;
+}
+
+.nat-2nd-pack .img-wrapper {
+    height: 150px;
+    margin-top: 40px;
+}
+
+.in-nat {
+    margin-top: 30px;
+    border: 2px solid #fff;
+    background: none;
+    position: relative;
+    z-index: 50;
+}
+
+.slider {
+    position: relative;
+}
+
+#nativator-slider {
+    transform: skewX(15deg) rotate(-17deg);
+    position: absolute;
+    left: 15px;
+    bottom: 120px;
+    width: 355px;
+    height: 505px;
+    z-index: 2000;
+}
+
+.nativator-slider-shot {
+    position: relative;
+    height: 610px;
+    bottom: 0;
+    z-index: 1010;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.nativator-img {
+    position: absolute;
+    left: -150px;
+    bottom: -250px;
+}
+
+.top-block--nativator button.prev {
+    bottom: 175px;
+    z-index: 2000;
+}
+
+.top-block--nativator button.next {
+    bottom: 175px;
+    z-index: 2000;
+}

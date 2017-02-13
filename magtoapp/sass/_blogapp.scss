@@ -1,0 +1,108 @@
+.top-block--blogapp {
+  background: linear-gradient(120deg, #30053f, #500969, #642192, #807bb8, #a9beeb, #807bb8, #642192, #30053f);
+  background-size: 400% 400%;
+  animation: topBlock 10s ease infinite;
+
+  button { width: 250px; margin-top: 142px; }
+  button.prev { left: -30px; }
+  button.next { right: -10px; }
+
+  h3 + p { font-size: 24px; font-weight: normal; }
+}
+
+.top-block--blogapp .slider { display: relative; }
+
+.blogapp-img {
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+}
+
+#blogapp-slider {
+  position: absolute;
+  left: 122px;
+  bottom: 0;
+  width: 515px;
+  height: 635px;
+}
+
+.blogapp-slider-shot {
+  position: relative;
+  height: 635px;
+  bottom: 0;
+  z-index: 1010;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.b-block--blogapp {
+  background: linear-gradient(-25deg, #30053f, #a9beeb, #30053f);
+  background-size: 300% 300%;
+  animation: bBlock 10s ease infinite;
+  overflow: visible;
+}
+
+.steps-blogapp .b-block--blogapp {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.steps-blogapp .row:last-child .b-block--blogapp { margin-bottom: 0; }
+
+.steps-blogapp .row div:nth-child(2) .b-block-number {
+  left: -30px;
+  right: auto;
+  margin-right: -120px;
+}
+
+.number-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.steps-blogapp .b-block-wrapper img { position: absolute; bottom: 0; margin: 0; left: -50px; }
+.steps-blogapp .b-block-wrapper:nth-child(2) img { left: auto; right: 50px; bottom: -30px;}
+.steps-blogapp .b-block-wrapper:last-child img { left: 0; bottom: 0;}
+
+.steps-blogapp .b-block-wrapper p { position: relative; left: 150px; }
+.steps-blogapp .b-block-wrapper:nth-child(2) p { right: 170px; left: auto; }
+.steps-blogapp .b-block-wrapper:last-child p { left: 70px; right: auto; }
+
+.extended .blogapp-row-1 .b-block--blogapp {
+  justify-content: flex-start;
+  height: 400px;
+  .img-wrapper { height: 150px; margin-top: 50px; }
+}
+
+.blogapp-row-1 { margin-bottom: 30px; }
+
+.extended .blogapp-row-2 .b-block--blogapp {
+  min-height: 100%;
+  height: 180px;
+}
+
+.h4-thin {
+  font-size: 18px;
+  font-weight: normal;
+  padding-bottom: 0;
+}
+
+.blogapp-row-3 .b-block--blogapp .img-wrapper { height: 150px; margin-top: 50px; }
+.blogapp-row-3 .b-block--blogapp { justify-content: flex-start; }
+
+.solo {
+  margin-top: 30px;
+  button {
+    margin-top: 20px;
+    border: 2px solid #fff;
+    background: none;
+  }
+}

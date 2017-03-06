@@ -96,7 +96,7 @@ a {
   color: #fff;
 }
 
-a:visited, a:active, a:hover {
+a:focus, a:visited, a:active, a:hover {
   color: #fff;
   text-decoration: none !important;
 }
@@ -871,8 +871,27 @@ a.main-link--green {
   font-size: 1.6em;
   max-width: 400px;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.6);
   padding: 5px 10px;
+  z-index: 10;
+}
+
+.inform-wrapper .list-item:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  z-index: -1;
+}
+
+.inform-wrapper .list-item span {
+  position: relative;
+  display: inline;
 }
 
 .inform-wrapper .list-item .point {
@@ -1718,18 +1737,19 @@ div.news-list img.preview_picture {
 
 .service-preview {
   position: relative;
-  padding-top: 70px;
+  padding-top: 20px;
   padding-bottom: 50px;
   padding-left: 70px;
   background-size: contain;
-  background-position: 100% 0;
+  background-position: 100% 0%;
   background-repeat: no-repeat;
+  height: 385px;
 }
 
 .service-preview:nth-child(2n+1) {
   padding-left: 0;
   padding-right: 70px;
-  background-position: 0 0;
+  background-position: 100% 100%;
 }
 
 .service-preview:nth-child(2n+1) .desc-wrapper {
@@ -1790,10 +1810,10 @@ div.news-list img.preview_picture {
 
 .service-preview .price-label {
   position: absolute;
-  bottom: 50px;
-  right: -30px;
-  width: 200px;
-  height: 200px;
+  bottom: 30px;
+  right: -20px;
+  width: 190px;
+  height: 190px;
   background-color: #00ad5d;
   border-radius: 50%;
   color: #fff;
@@ -2001,7 +2021,7 @@ div.news-list img.preview_picture {
 }
 
 .review .desc {
-  height: 220px;
+  height: 130px;
   transition: .3s;
   overflow: hidden;
 }
@@ -2347,7 +2367,7 @@ div.news-list img.preview_picture {
 }
 
 .fos-services {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -3156,7 +3176,7 @@ div.news-list img.preview_picture {
 }
 
 .dropdown-list:hover .dropdown-wrapper {
-  height: calc(100%*9);
+  height: calc(45px * 10);
 }
 
 .dropdown-wrapper {
@@ -3173,10 +3193,11 @@ div.news-list img.preview_picture {
 
 .dropdown-wrapper .item {
   display: block;
-  padding: 0 62px;
+  padding: 0 57px;
   font-size: inherit;
   text-align: left;
   transition: none;
+  line-height: 2.5em;
 }
 
 .dropdown-wrapper .item:hover {
@@ -3422,6 +3443,7 @@ div.news-list img.preview_picture {
     align-items: center;
     background-image: none !important;
     background-color: #f4f4f4;
+    height: 100%;
   }
   .service-preview .desc-wrapper {
     margin: 0 0 30px !important;

@@ -210,6 +210,7 @@ a.masterlink:hover {
   width: 100%;
   text-align: center;
   font-size: 3em;
+  line-height: 1.5;
   font-weight: 600;
   margin-bottom: 50px;
   text-transform: uppercase;
@@ -715,6 +716,111 @@ a.main-link--green {
 
 .mfp-close-btn-in .mfp-close:hover:after {
   border-color: #fff;
+}
+
+.sub-footer {
+  color: #919191;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+.sub-footer .right {
+  text-align: right;
+}
+
+.sub-footer .right a {
+  color: #00ad5d;
+}
+
+.sub-footer .right a:hover {
+  color: #00944f;
+  text-decoration: underline !important;
+}
+
+.gray-icon {
+  background-color: #f0f0f0;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+  background-image: url(../img/thanks.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.white-page {
+  padding: 100px 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.white-page .sub-header span {
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.white-page .person-wrapper {
+  position: relative;
+}
+
+.white-page .person {
+  position: absolute;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.white-page .person span {
+  display: block;
+  font-weight: normal;
+}
+
+.thank-you .person-wrapper {
+  margin-bottom: 30px;
+}
+
+.thank-you .person {
+  bottom: 80px;
+  right: -92%;
+}
+
+.null-page .gray-icon {
+  background-image: url(../img/404-egg.png);
+  background-position: 40% 35%;
+}
+
+.thank-you-review .sub-header {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.thank-you-review .person {
+  bottom: 40px;
+  right: -120px;
+}
+
+.promo-code {
+  margin-bottom: 40px;
+}
+
+.promo-code span {
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: 50px;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #00ad5d;
+}
+
+.promo-code span:not(:last-of-type) {
+  margin-right: 10px;
 }
 
 .simple-text-section {
@@ -3575,6 +3681,9 @@ div.news-list img.preview_picture {
     font-weight: 900;
     margin-bottom: 25px;
   }
+  .white-page {
+    padding: 50px 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -3620,6 +3729,15 @@ div.news-list img.preview_picture {
     -webkit-columns: 1;
     -moz-columns: 1;
     columns: 1;
+  }
+  .sub-footer .left,
+  .sub-footer .right {
+    text-align: center;
+  }
+  .thank-you .person {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
   }
 }
 
@@ -3727,5 +3845,16 @@ div.news-list img.preview_picture {
     width: 300px;
     margin-left: -150px;
     margin-top: -220px;
+  }
+  .thank-you .sub-header {
+    padding: 0 20px;
+  }
+  .thank-you .sub-header span br {
+    display: none;
+  }
+  .white-page .person {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
   }
 }

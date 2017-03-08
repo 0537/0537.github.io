@@ -219,43 +219,43 @@
   <!-- map script-->
   <script>
     function initMap() {
-
+    
         var pseudoCenter = {lat: 53.204167, lng: 50.1502051},
             trueCenter = {lat: 53.1983354, lng: 50.1502051};
-
+    
         var map = new google.maps.Map(document.getElementById('map'), {
             center: pseudoCenter,
             scrollwheel: false,
             zoom: 15
         });
-
+    
         var marker = new google.maps.Marker({
             position: trueCenter,
             icon: 'img/marker.png'
         });
-
+    
         marker.setMap(map);
-
+    
         google.maps.event.addListener(map, 'drag', function() {
             $('.map-alert').hide();
         });
-
+    
         google.maps.event.addListener(marker, 'click', function() {
             $('.map-alert').show();
             map.setCenter(pseudoCenter);
         });
-
+    
         $('.map-alert .close').on('click', function mapCloseBtn() {
             $('.map-alert').hide();
             map.setCenter(trueCenter);
         });
     }
-
+    
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3Np7wut0qfeUl-lvCbxbfH2uKYrKWmMU&amp;callback=initMap" async="" defer=""></script>
   <script>
     var screenWidth = $(window).width();
-
+    
     if (screenWidth > 992) {
         $(window).stellar();
     }

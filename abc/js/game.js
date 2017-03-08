@@ -280,7 +280,7 @@ $(window).on('load', function() {
 
         var img = new Image();
 
-        img.src = "img/window-dirty.jpg";
+        img.src = "/img/window-dirty.jpg";
         img.onload = function() {
             resizeGame();
             init(container, $('#canvas').width(), $('#canvas').height(), img);

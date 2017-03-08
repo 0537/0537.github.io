@@ -1,0 +1,42 @@
+.inform-controls {
+  margin-bottom: 35px;
+}
+
+.inform-tabs .item.active {
+  display: block;
+}
+
+.inform-tabs .item {
+  display: none;
+}
+
+.inform-tabs .item img {
+  max-width: 100%;
+}
+
+.inform-controls .item {
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 2px;
+  height: 50px;
+  line-height: 46px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  border: 2px solid #99c437;
+  color: #99c437;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.inform-controls .item.active,
+.inform-controls .item:hover {
+  color: #fff;
+  background: #99c437;
+}
+
+.inform-controls .item:active {
+  background: #82a72e;
+  border-color: #82a72e;
+}

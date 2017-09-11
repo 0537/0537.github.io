@@ -2,184 +2,259 @@ var $window = $(window);
 var $doc = $(document);
 
 function formPlacing() {
-	var form = $('.calc-price__form-wrapper');
-	var container = $('.container');
-	var containerLeftPos = container.offset().left;
-	form.css('right', containerLeftPos);
+    var form = $('.calc-price__form-wrapper');
+    var container = $('.container');
+    var containerLeftPos = container.offset().left;
+    form.css('right', containerLeftPos);
 }
 
 function checkbox_switching() {
-	var checkbox = $('.main-checkbox')
-	var checkboxInput = checkbox.find('.main-checkbox__input');
+    var checkbox = $('.main-checkbox')
+    var checkboxInput = checkbox.find('.main-checkbox__input');
 
-	checkboxInput.click(function() {
-		$(this).parent().toggleClass('active');
-	});
-}	
+    checkboxInput.click(function() {
+        $(this).parent().toggleClass('active');
+    });
+}
 
 $window.resize(formPlacing);
 
 $doc.ready(function() {
-	$('.main-select').selectmenu({
-		width: 350,
-		change: function(event, ui) {
-			var garbageType = ui.item.element.data('garbage');
-			var garbageInfoCont = $('.calc-price__garbage-info');
-			garbageInfoCont.removeClass('active');
-			$(garbageType).addClass('active');
-		}
+    function anchorScroll() {
+        var link = $('.main-nav__link, .footer__nav-link');
+        
+        link.on('click', function(event) {
+        	var ths = $(this);
+
+            if (ths.attr('href') && ths.attr('href') !== '' && ths.attr('href') !== '#') {
+                event.preventDefault();
+
+                var sectionId = ths.attr('href');
+                var top = $(sectionId).offset().top;
+
+                $('body, html').animate({
+                    scrollTop: top
+                }, 1000);
+            }
+        });
+
+        var calcPrice = $('[data-action="#calcPrice"]')
+
+        calcPrice.on('click', function(event) {
+            var ths = $(this);
+
+            if (ths.data('action') && ths.data('action') !== '' && ths.data('action') !== '#') {
+                event.preventDefault();
+
+                var sectionId = ths.data('action');
+                var top = $(sectionId).offset().top;
+
+                $('body, html').animate({
+                    scrollTop: top
+                }, 1000);
+            }
+        });
+    }
+
+    anchorScroll();
+
+    $('input[name="phone"]').mask('+7 (999) 999-99-99');
+
+    $('[data-action="confirm"]').magnificPopup({
+        showCloseBtn: false,
+        items: {
+            src: '.modal--confirm'
+        },
+        type: 'inline'
+    });
+
+    $('[data-action="callCourier"]').magnificPopup({
+		showCloseBtn: false,
+		items: {
+			src: '.modal--callCourier'
+		},
+		type: 'inline'
 	});
 
-	$('.rates__titles').slick({
-		arrows: false,
-		draggable: false,
-		infinite: false,
-		centerMode: true,
-		focusOnSelect: true,
-		asNavFor: '.rates__cards',
+    $('[data-action="setReview"]').magnificPopup({
+		showCloseBtn: false,
+		items: {
+			src: '.modal--setReview'
+		},
+		type: 'inline'
 	});
 
-	$('.rates__cards').slick({
-		arrows: false,
-		infinite: false,
-		asNavFor: '.rates__titles',
+    $('[data-action="makeDeal"]').magnificPopup({
+		showCloseBtn: false,
+		items: {
+			src: '.modal--makeDeal'
+		},
+		type: 'inline'
 	});
 
-	$('.clients__slider').slick({
-		arrows: false,
-		slidesToShow: 1,
-  		centerMode: true,
-		variableWidth: true
+	$('.modal__close').click(function () {
+		$.magnificPopup.close();
 	});
 
-	$('.clients__slider-wrapper .slider-prev').on('click', function() {
-		$('.clients__slider').slick('slickPrev');
-	});
+    $('.main-select').selectmenu({
+        width: 350,
+        change: function(event, ui) {
+            var garbageType = ui.item.element.data('garbage');
+            var garbageInfoCont = $('.calc-price__garbage-info');
+            garbageInfoCont.removeClass('active');
+            $(garbageType).addClass('active');
+        }
+    });
 
-	$('.clients__slider-wrapper .slider-next').on('click', function() {
-		$('.clients__slider').slick('slickNext');
-	});
+    $('.rates__titles').slick({
+        arrows: false,
+        draggable: false,
+        infinite: false,
+        centerMode: true,
+        focusOnSelect: true,
+        asNavFor: '.rates__cards',
+    });
 
-	$('.faq__slider').on('init', function(event, slick) {
-		var totalCont = $('.faq__slider-count');
-		var slidesCount = $('.faq__slide').not('.slick-cloned').length;
-		console.log(slidesCount);
-		totalCont.text(slidesCount);
-	});
+    $('.rates__cards').slick({
+        arrows: false,
+        infinite: false,
+        asNavFor: '.rates__titles',
+    });
 
-	$('.faq__slider').slick({
-		arrows: false,
-		slidesToShow: 1,
-		adaptiveHeight: true
-	});
+    $('.clients__slider').slick({
+        arrows: false,
+        slidesToShow: 1,
+        centerMode: true,
+        variableWidth: true
+    });
 
-	$('.faq__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-		var numberCont = $('.faq__slider-current');
-		var totalCont = $('.faq__slider-count');
-		var number = +nextSlide + 1;
-		numberCont.text(number);
-	});
+    $('.clients__slider-wrapper .slider-prev').on('click', function() {
+        $('.clients__slider').slick('slickPrev');
+    });
 
-	$('.faq .slider-prev').on('click', function() {
-		$('.faq__slider').slick('slickPrev');
-	});
+    $('.clients__slider-wrapper .slider-next').on('click', function() {
+        $('.clients__slider').slick('slickNext');
+    });
 
-	$('.faq .slider-next').on('click', function() {
-		$('.faq__slider').slick('slickNext');
-	});
+    $('.faq__slider').on('init', function(event, slick) {
+        var totalCont = $('.faq__slider-count');
+        var slidesCount = $('.faq__slide').not('.slick-cloned').length;
+        totalCont.text(slidesCount);
+    });
 
-	$('.faq__spoiler').on('click', function () {
-		var ths = $(this);
-		var desc = ths.find('.faq__desc');
-		desc.stop(true, true).slideToggle('fast');
-		ths.find('.faq__spoiler-icon').stop(true, true).toggleClass('flip');
-		return false;
-	});
+    $('.faq__slider').slick({
+        arrows: false,
+        slidesToShow: 1,
+        adaptiveHeight: true
+    });
 
-	$('.reviews__slider').slick({
-		arrows: false,
-		slidesToShow: 1
-	});
+    $('.faq__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        var numberCont = $('.faq__slider-current');
+        var totalCont = $('.faq__slider-count');
+        var number = +nextSlide + 1;
+        numberCont.text(number);
+    });
 
-	$('.reviews .slider-prev').on('click', function() {
-		$('.reviews__slider').slick('slickPrev');
-	});
+    $('.faq .slider-prev').on('click', function() {
+        $('.faq__slider').slick('slickPrev');
+    });
 
-	$('.reviews .slider-next').on('click', function() {
-		$('.reviews__slider').slick('slickNext');
-	});
+    $('.faq .slider-next').on('click', function() {
+        $('.faq__slider').slick('slickNext');
+    });
 
-	formPlacing();
-	checkbox_switching();	
+    $('.faq__spoiler').on('click', function() {
+        var ths = $(this);
+        var desc = ths.find('.faq__desc');
+        desc.stop(true, true).slideToggle('fast');
+        ths.find('.faq__spoiler-icon').stop(true, true).toggleClass('flip');
+        return false;
+    });
+
+    $('.reviews__slider').slick({
+        arrows: false,
+        slidesToShow: 1
+    });
+
+    $('.reviews .slider-prev').on('click', function() {
+        $('.reviews__slider').slick('slickPrev');
+    });
+
+    $('.reviews .slider-next').on('click', function() {
+        $('.reviews__slider').slick('slickNext');
+    });
+
+    formPlacing();
+    checkbox_switching();
 });
 
 var map;
 
 function initMap() {
-	map = new google.maps.Map(document.getElementById('map'), {
-		center: {
-			lat: 53.222366,
-			lng: 50.306130
-		},
-		zoom: 11
-	});
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+            lat: 53.222366,
+            lng: 50.306130
+        },
+        zoom: 11
+    });
 
-	var geocoder = new google.maps.Geocoder();
+    var geocoder = new google.maps.Geocoder();
 
-	function geocodeAddress(geocoder, resultsMap, type) {
-		var adress = [];
-		var city = $('.main-input[name="city"]').val();
-		var street = $('.main-input[name="street"]').val();
-		var houseNumber = $('.main-input[name="houseNumber"]').val();
+    function geocodeAddress(geocoder, resultsMap, type) {
+        var adress = [];
+        var city = $('.main-input[name="city"]').val();
+        var street = $('.main-input[name="street"]').val();
+        var houseNumber = $('.main-input[name="houseNumber"]').val();
 
-		if (street !== '' && street !== undefined && houseNumber !== '' && houseNumber !== undefined) {
-			adress.push(city, street, houseNumber);
-			adress = adress.toString();
+        if (street !== '' && street !== undefined && houseNumber !== '' && houseNumber !== undefined) {
+            adress.push(city, street, houseNumber);
+            adress = adress.toString();
 
-			geocoder.geocode({
-				'address': adress
-			}, function(results, status) {
-				if (status === 'OK') {
-					resultsMap.setCenter(results[0].geometry.location);
+            geocoder.geocode({
+                'address': adress
+            }, function(results, status) {
+                if (status === 'OK') {
+                    resultsMap.setCenter(results[0].geometry.location);
 
-					var markerName = ('marker_' + type);					
-					var markerName = new google.maps.Marker({
-						map: resultsMap,
-						position: results[0].geometry.location,
-					});
+                    var markerName = ('marker_' + type);
+                    var markerName = new google.maps.Marker({
+                        map: resultsMap,
+                        position: results[0].geometry.location,
+                    });
 
-					var markerPos = markerName.getPosition();
+                    var markerPos = markerName.getPosition();
 
-					if (google.maps.geometry.poly.containsLocation(markerPos, REGION1)) {
-						alert('Объект внутри области REGION1');
-					} else {
-						alert('Объект внутри области REGION2');
-					}
+                    if (google.maps.geometry.poly.containsLocation(markerPos, REGION1)) {
+                        alert('Объект внутри области REGION1');
+                    } else {
+                        alert('Объект внутри области REGION2');
+                    }
 
-					resultsMap.panTo(results[0].geometry.location);
-					resultsMap.setZoom(15);
-				}
-			});
-		}		
-	}
+                    resultsMap.panTo(results[0].geometry.location);
+                    resultsMap.setZoom(15);
+                }
+            });
+        }
+    }
 
-	function change_step() {
-		var submit = $('#setMarkerFrom');
-		var formWrapper = $('.calc-price__form-wrapper');
-		var form = formWrapper.find('calc-price__form');
-		var formInfo = formWrapper.find('.calc-price__form-info-wrapper');
-		var formBackground = formWrapper.find('.calc-price__form-background');
-		var formHeader = formWrapper.find('.calc-price__form-header');
-		var formStepNumber = formWrapper.find('.calc-price__step-number');
+    function change_step() {
+        var submit = $('#setMarkerFrom');
+        var formWrapper = $('.calc-price__form-wrapper');
+        var form = formWrapper.find('calc-price__form');
+        var formInfo = formWrapper.find('.calc-price__form-info-wrapper');
+        var formBackground = formWrapper.find('.calc-price__form-background');
+        var formHeader = formWrapper.find('.calc-price__form-header');
+        var formStepNumber = formWrapper.find('.calc-price__step-number');
 
-		formInfo.html('');
-		formHeader.css('opacity', '0');
-		formBackground.addClass('flip');
+        formInfo.html('');
+        formHeader.css('opacity', '0');
+        formBackground.addClass('flip');
 
-		setTimeout(function() {
-			formHeader.attr('style', '');
-			formStepNumber.text(2);
-			formInfo.html(' \
+        setTimeout(function() {
+            formHeader.attr('style', '');
+            formStepNumber.text(2);
+            formInfo.html(' \
 				<div class="calc-price__form-info"> \
 					<input class="main-input" type="text" name="city" value="Самара" disabled> \
 					<input class="main-input" type="text" name="street" placeholder="Улица"> \
@@ -211,67 +286,63 @@ function initMap() {
 				</div> \
 				<button class="main-btn" type="button" id="setMarkerTo">Далее</button> \
 				')
-			checkbox_switching();
-		}, 150);			
-	}
+            checkbox_switching();
+        }, 150);
+    }
 
-	var REGION1_coords = [
-		{
-			lat: 53.196494,
-			lng: 50.171279
-		}, {
-			lat: 53.196671,
-			lng: 50.178590
-		}, {
-			lat: 53.191293,
-			lng: 50.179110
-		}, {
-			lat: 53.191165,
-			lng: 50.174082
-		}
-	];
+    var REGION1_coords = [{
+        lat: 53.196494,
+        lng: 50.171279
+    }, {
+        lat: 53.196671,
+        lng: 50.178590
+    }, {
+        lat: 53.191293,
+        lng: 50.179110
+    }, {
+        lat: 53.191165,
+        lng: 50.174082
+    }];
 
-	var REGION2_coords = [
-		{
-			lat: 53.191293,
-			lng: 50.179110
-		}, {
-			lat: 53.191165,
-			lng: 50.174082
-		}, {
-			lat: 53.186997,
-			lng: 50.174493
-		}, {
-			lat: 53.187074,
-			lng: 50.178830
-		}
-	];
+    var REGION2_coords = [{
+        lat: 53.191293,
+        lng: 50.179110
+    }, {
+        lat: 53.191165,
+        lng: 50.174082
+    }, {
+        lat: 53.186997,
+        lng: 50.174493
+    }, {
+        lat: 53.187074,
+        lng: 50.178830
+    }];
 
-	var REGION1 = new google.maps.Polygon({
-		paths: REGION1_coords,
-		strokeColor: '#FF0000',
-		strokeOpacity: 0.8,
-		strokeWeight: 2,
-		fillColor: '#FF0000',
-		fillOpacity: 0.35
-	});
+    var REGION1 = new google.maps.Polygon({
+        paths: REGION1_coords,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+    });
 
-	var REGION2 = new google.maps.Polygon({
-		paths: REGION2_coords,
-		strokeColor: '#00FF00',
-		strokeOpacity: 0.8,
-		strokeWeight: 2,
-		fillColor: '#00FF00',
-		fillOpacity: 0.35
-	});
+    var REGION2 = new google.maps.Polygon({
+        paths: REGION2_coords,
+        strokeColor: '#00FF00',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#00FF00',
+        fillOpacity: 0.35
+    });
 
-	REGION1.setMap(map);
-	REGION2.setMap(map);
+    REGION1.setMap(map);
+    REGION2.setMap(map);
 
-	var submitFrom = $('#setMarkerFrom, #setMarkerTo');
+    var submitFrom = $('#setMarkerFrom, #setMarkerTo');
 
-	submitFrom.on('click', function() {
-		geocodeAddress(geocoder, map, 'from');
-		change_step();	
-	});
+    submitFrom.on('click', function() {
+        geocodeAddress(geocoder, map, 'from');
+        change_step();
+    });
 }

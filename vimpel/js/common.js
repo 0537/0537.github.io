@@ -17,14 +17,57 @@ function checkbox_switching() {
     });
 }
 
+function numbersSlider() {
+    var numSlider = $('.numbers__wrapper');
+    var numSlidePrev = numSlider.find('.slider-prev');
+    var numSlideNext = numSlider.find('.slider-next');
+
+    if ($window.width() < 768) {
+        numSlider.slick({
+            arrows: false,
+            slidesToShow: 1,
+        });
+
+        numSlidePrev.on('click', function() {
+            numSlider.slick('slickPrev');
+        });
+
+        numSlideNext.on('click', function() {
+            numSlider.slick('slickNext');
+        });
+    }    
+}
+
+function switchMobileNav() {
+    var burger = $('.main-header__burger');
+    var mainNav = $('.main-nav');
+    var body = $('body');
+
+    if ($window.width() < 768) {
+        burger.click(function () {
+            ths = $(this);
+
+            if (!ths.hasClass('active')) {
+                ths.addClass('active');
+                mainNav.addClass('active');
+                body.addClass('no-scroll');
+            } else {
+                ths.removeClass('active');
+                mainNav.removeClass('active');
+                body.removeClass('no-scroll');
+            }
+        });
+    }    
+}
+
 $window.resize(formPlacing);
 
 $doc.ready(function() {
     function anchorScroll() {
         var link = $('.main-nav__link, .footer__nav-link');
-        
+
         link.on('click', function(event) {
-        	var ths = $(this);
+            var ths = $(this);
 
             if (ths.attr('href') && ths.attr('href') !== '' && ths.attr('href') !== '#') {
                 event.preventDefault();
@@ -69,35 +112,34 @@ $doc.ready(function() {
     });
 
     $('[data-action="callCourier"]').magnificPopup({
-		showCloseBtn: false,
-		items: {
-			src: '.modal--callCourier'
-		},
-		type: 'inline'
-	});
+        showCloseBtn: false,
+        items: {
+            src: '.modal--callCourier'
+        },
+        type: 'inline'
+    });
 
     $('[data-action="setReview"]').magnificPopup({
-		showCloseBtn: false,
-		items: {
-			src: '.modal--setReview'
-		},
-		type: 'inline'
-	});
+        showCloseBtn: false,
+        items: {
+            src: '.modal--setReview'
+        },
+        type: 'inline'
+    });
 
     $('[data-action="makeDeal"]').magnificPopup({
-		showCloseBtn: false,
-		items: {
-			src: '.modal--makeDeal'
-		},
-		type: 'inline'
-	});
+        showCloseBtn: false,
+        items: {
+            src: '.modal--makeDeal'
+        },
+        type: 'inline'
+    });
 
-	$('.modal__close').click(function () {
-		$.magnificPopup.close();
-	});
+    $('.modal__close').click(function() {
+        $.magnificPopup.close();
+    });
 
     $('.main-select').selectmenu({
-        width: 350,
         change: function(event, ui) {
             var garbageType = ui.item.element.data('garbage');
             var garbageInfoCont = $('.calc-price__garbage-info');
@@ -121,55 +163,91 @@ $doc.ready(function() {
         asNavFor: '.rates__titles',
     });
 
-    $('.clients__slider').slick({
-        arrows: false,
-        slidesToShow: 1,
-        centerMode: true,
-        variableWidth: true
-    });
+    function clientsSlider() {
+        var cli = $('.clients');
+        var cliSlider = cli.find('.clients__slider');
+        var cliSlidePrev = cli.find('.slider-prev');
+        var cliSlideNext = cli.find('.slider-next');
 
-    $('.clients__slider-wrapper .slider-prev').on('click', function() {
-        $('.clients__slider').slick('slickPrev');
-    });
+        cliSlider.slick({
+            arrows: false,
+            slidesToShow: 1,
+            centerMode: true,
+            variableWidth: true,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    variableWidth: false,
+                    centerMode: false
+                }
+            }]
+        });
 
-    $('.clients__slider-wrapper .slider-next').on('click', function() {
-        $('.clients__slider').slick('slickNext');
-    });
+        cliSlidePrev.on('click', function() {
+            cliSlider.slick('slickPrev');
+        });
 
-    $('.faq__slider').on('init', function(event, slick) {
-        var totalCont = $('.faq__slider-count');
-        var slidesCount = $('.faq__slide').not('.slick-cloned').length;
-        totalCont.text(slidesCount);
-    });
+        cliSlideNext.on('click', function() {
+            cliSlider.slick('slickNext');
+        });
+    }
 
-    $('.faq__slider').slick({
-        arrows: false,
-        slidesToShow: 1,
-        adaptiveHeight: true
-    });
+    function faqSlider() {
+        var faq = $('.faq');
+        var faqSlider = faq.find('.faq__slider');
+        var faqSlidePrev = faq.find('.slider-prev');
+        var faqSlideNext = faq.find('.slider-next');
+        var faqSpoiler = faq.find('.faq__spoiler');
 
-    $('.faq__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-        var numberCont = $('.faq__slider-current');
-        var totalCont = $('.faq__slider-count');
-        var number = +nextSlide + 1;
-        numberCont.text(number);
-    });
+        faqSlider.on('init', function(event, slick) {
+            var totalCont = $('.faq__slider-count');
+            var slidesCount = $('.faq__slide').not('.slick-cloned').length;
+            totalCont.text(slidesCount);
+        });
 
-    $('.faq .slider-prev').on('click', function() {
-        $('.faq__slider').slick('slickPrev');
-    });
+        faqSlider.slick({
+            arrows: false,
+            slidesToShow: 1,
+            adaptiveHeight: true
+        });
 
-    $('.faq .slider-next').on('click', function() {
-        $('.faq__slider').slick('slickNext');
-    });
+        faqSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            var numberCont = faqSlider.find('.faq__slider-current');
+            var totalCont = faqSlider.find('.faq__slider-count');
+            var number = +nextSlide + 1;
+            numberCont.text(number);
+        });
 
-    $('.faq__spoiler').on('click', function() {
-        var ths = $(this);
-        var desc = ths.find('.faq__desc');
-        desc.stop(true, true).slideToggle('fast');
-        ths.find('.faq__spoiler-icon').stop(true, true).toggleClass('flip');
-        return false;
-    });
+
+        faqSlidePrev.on('click', function() {
+            faqSlider.slick('slickPrev');
+            faqSlider.find('.slick-list').height('auto');
+        });
+
+        faqSlideNext.on('click', function() {
+            faqSlider.slick('slickNext');
+            faqSlider.find('.slick-list').height('auto');
+        });
+
+        faqSpoiler.on('click', function() {
+            var ths = $(this);
+            var desc = ths.find('.faq__desc');
+            var faqSlideCurrentHeight = faq.find('.slick-current').height();
+            console.log(faqSlideCurrentHeight);
+
+            desc.stop(true, true).slideToggle('fast');
+            ths.find('.faq__spoiler-icon').stop(true, true).toggleClass('flip');
+
+            faqSlider.find('.slick-list').height('auto');
+                
+            return false;
+        });
+    }
+
+    clientsSlider();
+    faqSlider();
+    numbersSlider();
+    switchMobileNav();
 
     $('.reviews__slider').slick({
         arrows: false,
@@ -255,37 +333,37 @@ function initMap() {
             formHeader.attr('style', '');
             formStepNumber.text(2);
             formInfo.html(' \
-				<div class="calc-price__form-info"> \
-					<input class="main-input" type="text" name="city" value="Самара" disabled> \
-					<input class="main-input" type="text" name="street" placeholder="Улица"> \
-					\
-					<div class="main-input__wrapper">\
-						<input class="main-input main-input--small"  type="text" name="homeNumber" placeholder="№ Дома"> \
-						<input class="main-input main-input--small"  type="text" name="" placeholder="№ офиса"> \
-					</div>\
-					\
-					<label for="checky_01" class="main-checkbox"> \
-						<input type="checkbox" id="checky_01" class="main-checkbox__input"/> \
-						<div class="main-checkbox__icon"> \
-							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 26 26" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 26 26" class="checked"><path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z"></path></svg> \
-						</div> \
-						<div class="main-checkbox__text">Страхование отправления</div> \
-					</label> \
-					\
-					<a class="desc--form desc--link" href="#">Правила страхования</a> \
-					\
-					<label for="checky_02" class="main-checkbox"> \
-						<input type="checkbox" id="checky_02" class="main-checkbox__input"/> \
-						<div class="main-checkbox__icon"> \
-							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 26 26" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 26 26" class="checked"><path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z"></path></svg> \
-						</div> \
-						<div class="main-checkbox__text">Упаковка отправления</div> \
-					</label> \
-					\
-					<p class="desc--form">Варианты упаковки: тубус, коробки, мешки, пузырчатая пленка</p> \
-				</div> \
-				<button class="main-btn" type="button" id="setMarkerTo">Далее</button> \
-				')
+                <div class="calc-price__form-info"> \
+                    <input class="main-input" type="text" name="city" value="Самара" disabled> \
+                    <input class="main-input" type="text" name="street" placeholder="Улица"> \
+                    \
+                    <div class="main-input__wrapper">\
+                        <input class="main-input main-input--small"  type="text" name="homeNumber" placeholder="№ Дома"> \
+                        <input class="main-input main-input--small"  type="text" name="" placeholder="№ офиса"> \
+                    </div>\
+                    \
+                    <label for="checky_01" class="main-checkbox"> \
+                        <input type="checkbox" id="checky_01" class="main-checkbox__input"/> \
+                        <div class="main-checkbox__icon"> \
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 26 26" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 26 26" class="checked"><path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z"></path></svg> \
+                        </div> \
+                        <div class="main-checkbox__text">Страхование отправления</div> \
+                    </label> \
+                    \
+                    <a class="desc--form desc--link" href="#">Правила страхования</a> \
+                    \
+                    <label for="checky_02" class="main-checkbox"> \
+                        <input type="checkbox" id="checky_02" class="main-checkbox__input"/> \
+                        <div class="main-checkbox__icon"> \
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 26 26" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 26 26" class="checked"><path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z"></path></svg> \
+                        </div> \
+                        <div class="main-checkbox__text">Упаковка отправления</div> \
+                    </label> \
+                    \
+                    <p class="desc--form">Варианты упаковки: тубус, коробки, мешки, пузырчатая пленка</p> \
+                </div> \
+                <button class="main-btn" type="button" id="setMarkerTo">Далее</button> \
+                ')
             checkbox_switching();
         }, 150);
     }

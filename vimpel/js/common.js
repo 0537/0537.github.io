@@ -13,12 +13,15 @@ function formPlacing() {
 function checkbox_switching() {
     var checkbox = $('.main-checkbox')
     var checkboxInput = checkbox.find('.main-checkbox__input');
+    var dispatch = $('.dispatch');
+    var dispatchCheck = $('.main-checkbox--dispatch');
 
     checkboxInput.click(function() {
-        $(this).parent().toggleClass('active');
+        var ths = $(this);
+        ths.parent().toggleClass('active');
 
-        if (checkboxInput.parent('.dispatch')) {
-            $('.dispatch').find('input').toggleClass('active');
+        if (ths.parent('.main-checkbox').hasClass('main-checkbox--dispatch')) {
+            dispatch.find('.main-input').toggleClass('active');
         }
     });
 }
@@ -350,7 +353,7 @@ function initMap() {
                     </div>\
                     \
                     <div class="dispatch">\
-                        <label for="checky_01" class="main-checkbox"> \
+                        <label for="checky_01" class="main-checkbox main-checkbox--dispatch"> \
                             <input type="checkbox" id="checky_01" class="main-checkbox__input"/> \
                             <div class="main-checkbox__icon"> \
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 26 26" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 26 26" class="checked"><path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z"></path></svg> \

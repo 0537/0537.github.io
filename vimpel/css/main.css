@@ -2592,6 +2592,7 @@ html .ui-button.ui-state-disabled:active {
 
 .rates__card--one-day .desc:hover .tooltip {
   opacity: 1;
+  display: block;
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }

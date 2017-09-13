@@ -16,23 +16,22 @@
   </head>
   <body>
     <!-- header-->
-    <header class="container main-header" id="header"><a class="main-header__logo-wrapper" href="index.html"><img class="main-header__logo" src="../images/logo-header.png"></a>
-      <nav class="main-nav">
-        <ul class="main-nav__wrapper">
-          <li class="main-nav__item"><a class="main-nav__link" href="#why">Почему мы?</a></li>
-          <li class="main-nav__item"><a class="main-nav__link" href="#rates">Тарифы</a></li>
-          <li class="main-nav__item"><a class="main-nav__link" href="#clients">Наши клиенты</a></li>
-          <li class="main-nav__item"><a class="main-nav__link" href="#faq">FAQ</a></li>
-          <li class="main-nav__item"><a class="main-nav__link" href="#reviews">Отзывы</a></li>
-        </ul>
-      </nav><a class="main-header__phone" data-action="callCourier">
-        <div class="main-header__number">8 (495) 248-07-08</div>
-        <div class="main-header__desc">Заказ курьера 08:00 - 19:00</div></a>
-      <div class="main-header__burger"><span class="toggle"></span></div>
-    </header>
-    <!-- main-wrapper-->
-    <main class="main-page">
-      <section class="first-screen">
+    <header class="header">
+      <section class="container navbar" id="header"><a class="navbar__logo-wrapper" href="index.html"><img class="navbar__logo" src="../images/logo-header.png"></a>
+        <nav class="main-nav">
+          <ul class="main-nav__wrapper">
+            <li class="main-nav__item"><a class="main-nav__link" href="#why">Почему мы?</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#rates">Тарифы</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#clients">Наши клиенты</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#faq">FAQ</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#reviews">Отзывы</a></li>
+          </ul>
+        </nav><a class="navbar__phone" data-action="callCourier">
+          <div class="navbar__number">8 (495) 248-07-08</div>
+          <div class="navbar__desc">Заказ курьера 08:00 - 19:00</div></a>
+        <div class="navbar__burger"><span class="toggle"></span></div>
+      </section>
+      <section class="promo">
         <section class="background">
           <div class="background__circle">
             <div class="background__red"></div><img class="background__boxes" src="../images/bunch-of-boxes.png"><img class="background__courier" src="../images/courier.png">
@@ -77,6 +76,9 @@
           </div>
         </section>
       </section>
+    </header>
+    <!-- main-wrapper-->
+    <main class="main-page">
       <section class="container why" id="why">
         <svg class="package" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 511.999 511.999" width="490" height="430">
           <path d="M511.56 261.84l-34.13-102.4c-1.16-3.5-4.42-5.84-8.1-5.84h-17.06V93.87c0-4.7-3.82-8.54-8.53-8.54h-102.4V42.67c0-4.7-3.82-8.54-8.54-8.54H162.13c-4.72 0-8.53 3.83-8.53 8.54v42.66H68.27c-4.72 0-8.53 3.83-8.53 8.54v59.73H42.66c-3.5 0-6.62 2.12-7.92 5.36L.6 244.3c-1.04 2.63-.72 5.6.86 7.95C3.06 254.6 5.7 256 8.53 256h25.6v213.33c0 4.7 3.8 8.54 8.53 8.54H469.33c4.72 0 8.53-3.83 8.53-8.54V273.07h25.6c2.75 0 5.32-1.32 6.93-3.55 1.6-2.22 2.03-5.08 1.16-7.68zM435.2 153.6H281.6v-51.2h153.6v51.2zM170.66 51.2h153.6v34.13h-51.2c-4.7 0-8.53 3.82-8.53 8.53v59.74h-51.2V93.87c0-4.7-3.82-8.54-8.53-8.54h-34.14V51.2zM76.8 102.4h119.47v51.2H76.8v-51.2zm-28.36 68.27h288.83l-27.32 68.26H21.13l27.3-68.26zM51.2 256h264.53c.74 0 1.47-.12 2.16-.3 1.85-.5 3.5-1.6 4.64-3.12.45-.6.83-1.23 1.12-1.94l8.85-22.15 8.83-22.05V460.8H51.2V256zm409.6 204.8H358.4V170.67h2.38l22.52 67.53 9.67 29.03c.13.4.3.78.5 1.14 1.23 2.48 3.6 4.2 6.36 4.6.4.06.8.1 1.23.1h59.74V460.8zm8.53-204.8h-62.1l-7-21-21.46-64.34h84.42L491.6 256h-22.3z"></path>
@@ -122,18 +124,26 @@
       </section>
       <section class="numbers" data-stellar-background-ratio="0.8" data-stellar-vertical-offset="-200px" style="background-image: url(../images/background-parallax.jpg);">
         <div class="container numbers__wrapper">
-          <div class="numbers__item">
-            <div class="numbers__number">9</div>
-            <div class="numbers__desc">Постоянных клиентов</div>
+          <div class="numbers__inner">
+            <div class="numbers__item">
+              <div class="numbers__number">9</div>
+              <div class="numbers__desc">Постоянных клиентов</div>
+            </div>
+            <div class="numbers__item">
+              <div class="numbers__number">86</div>
+              <div class="numbers__desc">Отправлений доставлено</div>
+            </div>
+            <div class="numbers__item">
+              <div class="numbers__number">7</div>
+              <div class="numbers__desc">Часов - средний срок доставки <br>отправления</div>
+            </div>
           </div>
-          <div class="numbers__item">
-            <div class="numbers__number">86</div>
-            <div class="numbers__desc">Отправлений доставлено</div>
-          </div>
-          <div class="numbers__item">
-            <div class="numbers__number">7</div>
-            <div class="numbers__desc">Часов - средний срок доставки <br>отправления</div>
-          </div>
+          <svg class="slider-prev" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewbox="0 0 451.8 451.8">
+            <path d="M345.4 248.3L151.2 442.6c-12.4 12.4-32.4 12.4-44.7 0 -12.4-12.4-12.4-32.4 0-44.7L278.3 225.9 106.4 54c-12.4-12.4-12.4-32.4 0-44.7 12.4-12.4 32.4-12.4 44.8 0l194.3 194.3c6.2 6.2 9.3 14.3 9.3 22.4C354.7 234 351.6 242.1 345.4 248.3z"></path>
+          </svg>
+          <svg class="slider-next" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewbox="0 0 451.8 451.8">
+            <path d="M345.4 248.3L151.2 442.6c-12.4 12.4-32.4 12.4-44.7 0 -12.4-12.4-12.4-32.4 0-44.7L278.3 225.9 106.4 54c-12.4-12.4-12.4-32.4 0-44.7 12.4-12.4 32.4-12.4 44.8 0l194.3 194.3c6.2 6.2 9.3 14.3 9.3 22.4C354.7 234 351.6 242.1 345.4 248.3z"></path>
+          </svg>
         </div>
       </section>
       <section class="container rates" id="rates">
@@ -156,10 +166,13 @@
               </div>
               <button class="main-btn" type="button" data-action="callCourier">Вызвать курьера</button>
             </div>
-            <div class="rates__card">
+            <div class="rates__card rates__card--one-day">
               <header class="card-header">
                 <h3 class="sub-title">День в день</h3>
-                <p class="desc">Сегодня заберем - завтра вручим</p>
+                <div class="desc">Сегодня заберем - завтра вручим&nbsp;
+                  <div class="tooltip-icon"></div>
+                  <p class="tooltip">при оформлении заказа до 11:00. Доставят до 19:00</p>
+                </div>
               </header>
               <p class="price">250<span>₽</span></p>
               <div class="condition">За стандартную отправку
@@ -618,7 +631,6 @@
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/jquery-ui.min.js"></script>
     <script src="../js/jquery.magnific-popup.min.js"></script>
-    <script src="../js/jquery.stellar.min.js"></script>
     <script src="../js/mask.min.js"></script>
     <script src="../js/slick.min.js"></script>
     <script src="../js/common.js"></script>

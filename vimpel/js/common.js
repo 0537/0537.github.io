@@ -2,10 +2,12 @@ var $window = $(window);
 var $doc = $(document);
 
 function formPlacing() {
-    var form = $('.calc-price__form-wrapper');
-    var container = $('.container');
-    var containerLeftPos = container.offset().left;
-    form.css('right', containerLeftPos);
+    if ($window.width() > 767) {
+        var form = $('.calc-price__form-wrapper');
+        var container = $('.container');
+        var containerLeftPos = container.offset().left;
+        form.css('right', containerLeftPos);
+    }
 }
 
 function checkbox_switching() {
@@ -14,13 +16,18 @@ function checkbox_switching() {
 
     checkboxInput.click(function() {
         $(this).parent().toggleClass('active');
+
+        if (checkboxInput.parent('.dispatch')) {
+            $('.dispatch').find('input').toggleClass('active');
+        }
     });
 }
 
 function numbersSlider() {
-    var numSlider = $('.numbers__wrapper');
-    var numSlidePrev = numSlider.find('.slider-prev');
-    var numSlideNext = numSlider.find('.slider-next');
+    var numSliderWrapper = $('.numbers__wrapper');
+    var numSlider = $('.numbers__inner');
+    var numSlidePrev = numSliderWrapper.find('.slider-prev');
+    var numSlideNext = numSliderWrapper.find('.slider-next');
 
     if ($window.width() < 768) {
         numSlider.slick({
@@ -39,7 +46,7 @@ function numbersSlider() {
 }
 
 function switchMobileNav() {
-    var burger = $('.main-header__burger');
+    var burger = $('.navbar__burger');
     var mainNav = $('.main-nav');
     var body = $('body');
 
@@ -342,13 +349,20 @@ function initMap() {
                         <input class="main-input main-input--small"  type="text" name="" placeholder="№ офиса"> \
                     </div>\
                     \
-                    <label for="checky_01" class="main-checkbox"> \
-                        <input type="checkbox" id="checky_01" class="main-checkbox__input"/> \
-                        <div class="main-checkbox__icon"> \
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 26 26" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 26 26" class="checked"><path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z"></path></svg> \
-                        </div> \
-                        <div class="main-checkbox__text">Страхование отправления</div> \
-                    </label> \
+                    <div class="dispatch">\
+                        <label for="checky_01" class="main-checkbox"> \
+                            <input type="checkbox" id="checky_01" class="main-checkbox__input"/> \
+                            <div class="main-checkbox__icon"> \
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 26 26" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 26 26" class="checked"><path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z"></path></svg> \
+                            </div> \
+                            <div class="main-checkbox__text">Страхование отправления&nbsp;</div> \
+                            <div class="tooltip-wrapper">\
+                                <div class="tooltip-icon"></div> \
+                                <p class="tooltip">Стоимость - 0,3% от заявленной стоимости отправления. Страховка предоставлется Страховой Компанией «ПАРИ»</p>\
+                            </div>\
+                        </label> \
+                        <input class="main-input main-input--small"  type="text" name="" placeholder="Стоимость, ₽"> \
+                    <div>\
                     \
                     <a class="desc--form desc--link" href="#">Правила страхования</a> \
                     \
